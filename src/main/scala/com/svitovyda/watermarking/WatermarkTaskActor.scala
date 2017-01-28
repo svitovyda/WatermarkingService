@@ -59,7 +59,7 @@ object WatermarkTaskActor {
   def props = Props(classOf[WatermarkTaskActor])
 
   sealed trait Content {
-    def name = toString.toLowerCase
+    def name: String = toString.toLowerCase
   }
   object Content {
     val Values: Set[Content] = Set(Book, Journal)
