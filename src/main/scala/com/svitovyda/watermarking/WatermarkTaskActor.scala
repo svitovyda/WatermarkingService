@@ -39,7 +39,7 @@ class WatermarkTaskActor extends Actor {
 
       result match {
         case Some(watermark) => sender() ! watermark
-        case None            => sender() ! Response.Error("Document ")
+        case None            => sender() ! Response.Error("Document is not ready or failed or wasn't requested")
       }
 
     case Command.Started(documentId) =>
